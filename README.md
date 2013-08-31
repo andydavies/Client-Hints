@@ -7,7 +7,7 @@ Chrome plugin to add Client-Hints HTTP header, for more on Client-Hints see http
 
 Client-Hints is a proposed way for the browser to inform the server about certain client properties, for now device height, device width and device pixel ratio, with the aim that the server can deliver appropriate assets.
 
-No browser currently supports the CH: header, so this plugin enables the header to be set in Chrome for the purposed of experimentation.
+No browser currently supports the CH: header, so this plugin enables the header to be set in Chrome so I can experiment with it.
 
 
 #Installation
