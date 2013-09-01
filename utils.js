@@ -49,6 +49,6 @@ function getDeviceHints() {
 			dw: screen.width,
 			dpr: window.devicePixelRatio
 		}
-	}); 
+	});
 }
 
