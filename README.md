@@ -12,9 +12,10 @@ No browser currently supports the CH: header, so this plugin enables the header 
 
 #Installation
 
-Clone the respository and  from Chrome's Extension Page, choose *Load Unpacked Extension*
+Clone the respository and  from Chrome's Extension Page, choose *Load Unpacked Extension*.
 
-The hint values can be changed by editing defaults.js
+- The hint values can be changed by editing defaults.js
+- [Example nginx server config](https://gist.github.com/igrigorik/6372614) to serve images based on DPR hint in CH
 
 
 #TODO
@@ -23,7 +24,7 @@ The hint values can be changed by editing defaults.js
 - Clean up storage / caching code
 - Check the values in defaults.js
 - Update icon
- 
+
 #Credits
 
 Icon used comes form the Entypo icon font set http://www.entypo.com/ and is licensed under Creative Commons
