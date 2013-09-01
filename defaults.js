@@ -1,9 +1,9 @@
 // Not convinced the values in here are correct see
 // http://tools.ietf.org/html/draft-grigorik-http-client-hints-00
 
-var defaults = [ 
+var defaults = [
 	{
-		title: 'iPhone 4S (landscape)',
+		title: 'iPhone 4S',
 		ch: {
 			dh: 960,
 			dw: 640,
@@ -11,15 +11,7 @@ var defaults = [
 		}
 	},
 	{
-		title: 'iPhone 4S (portrait)',
-		ch: {
-			dh: 640,
-			dw: 960,
-			dpr: 2
-		}
-	},
-	{
-		title: 'iPad 2 (landscape)',
+		title: 'iPad 2',
 		ch: {
 			dh: 1024,
 			dw: 768,
@@ -27,19 +19,19 @@ var defaults = [
 		}
 	},
 	{
-		title: 'iPad 2 (portrait)',
+		title: 'Nexus S',
 		ch: {
-			dh: 768,
-			dw: 1024,
-			dpr: 1
+			dw: 800,
+			dh: 480,
+			dpr: 1.5
 		}
-	},	
+	},
 	{
-		title: 'Nexus 4 (portrait)',
+		title: 'Nexus 4',
 		ch: {
 			dh: 1280,
 			dw: 768,
 			dpr: 2
 		}
-	},
+	}
 ];
