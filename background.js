@@ -1,13 +1,10 @@
 chrome.webRequest.onBeforeSendHeaders.addListener(
   function(details) {
 
-  	var ch = getCH();
-
-  	var header = {
-  		name: 'CH', 
-  		value: ch
-  	}
-    details.requestHeaders.push(header);
+    var hints = getHints();
+    for (var idx in hints) {
+      details.requestHeaders.push(hints[idx]);
+    }
 
     return {requestHeaders: details.requestHeaders};
   },
