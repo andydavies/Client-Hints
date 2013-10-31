@@ -2,8 +2,8 @@
    "manifest_version": 2,
 
    "name": "Client-Hints",
-   "description": "Add a HTTP header for Client-Hints",
-   "version": "0.2.0",
+   "description": "Add HTTP Client-Hint headers to outgoing requests",
+   "version": "0.3.0",
 
    "browser_action": {
       "default_icon": "icon_48.png",

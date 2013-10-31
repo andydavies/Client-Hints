@@ -1,7 +1,5 @@
 // Cache client-hint string globally, backed by LocalStorage
-
 var key = 'ClientHints.value';
-
 var clientHint = undefined;
 
 // Listen to new values being written to localstorage
@@ -9,46 +7,46 @@ var clientHint = undefined;
 window.addEventListener('storage', onStorageEvent, false);
 
 function onStorageEvent(event) {
-	if(event.key == key) {
-		clientHint = event.newValue;
-	}
-	console.log(clientHint);
+  if(event.key == key) {
+    clientHint = JSON.parse(event.newValue);
+  }
+  console.dir('saved new CH value: ' + clientHint);
+}
+
+function getHints() {
+  if(clientHint === undefined) {
+    clientHint = getCH();
+  }
+
+  if(clientHint === null) {
+    setCH(getDeviceHints());
+  }
+
+  var hints = [];
+  for (var hint in clientHint['ch']) {
+    hints.push({
+       name: 'CH-' + hint.toUpperCase(),
+      value: clientHint['ch'][hint]
+    })
+  }
+
+  return hints;
 }
 
 function getCH() {
-	if(clientHint === undefined) {
-		clientHint = localStorage.getItem(key);
-	}
-	if(clientHint === null) {
-		var thisDevice = getDeviceHints();
-		clientHint = serialize(thisDevice.ch);
-		setCH(clientHint);
-	}
-	return clientHint;
+  return JSON.parse(localStorage.getItem(key));
 }
 
-function setCH(ch) {
-	localStorage.setItem(key, ch);
-}
-
-function serialize(obj) {
-   var str = [];
-   for(var p in obj){
-       if (obj.hasOwnProperty(p)) {
-           str.push(p + '=' + obj[p]);
-       }
-   }
-   return str.join(', ');
+function setCH(obj) {
+  clientHint = obj;
+  localStorage.setItem(key, JSON.stringify(obj));
 }
 
 function getDeviceHints() {
-	return({
-		title: 'This device',
-		ch: {
-			dh: screen.height,
-			dw: screen.width,
-			dpr: window.devicePixelRatio
-		}
-	});
+  return({
+    title: 'This device',
+    ch: {
+      dpr: window.devicePixelRatio.toPrecision(2)
+    }
+  });
 }
-
