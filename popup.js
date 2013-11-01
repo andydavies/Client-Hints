@@ -40,9 +40,6 @@ function initialize() {
   // Get current CH choice
   var currentCH = getCH();
 
-  console.log("BUILD")
-  console.dir(currentCH)
-
   // Build the menu
   var menu = document.getElementById('menu');
   if(menu !== undefined) {

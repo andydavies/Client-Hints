@@ -1,5 +1,5 @@
 // Cache client-hint string globally, backed by LocalStorage
-var key = 'ClientHints.value';
+var key = 'ClientHints.value.0.3.1';
 var clientHint = undefined;
 
 // Listen to new values being written to localstorage
@@ -15,7 +15,7 @@ function onStorageEvent(event) {
 
 function getHints() {
   if(clientHint === undefined) {
-    clientHint = getCH();
+    getCH();
   }
 
   if(clientHint === null) {
@@ -34,7 +34,8 @@ function getHints() {
 }
 
 function getCH() {
-  return JSON.parse(localStorage.getItem(key));
+  clientHint = JSON.parse(localStorage.getItem(key)) || getDeviceHints();
+  return clientHint;
 }
 
 function setCH(obj) {
