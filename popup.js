@@ -27,7 +27,7 @@ function onClick(event) {
 function serialize(obj) {
   var description =  '';
   for (var hint in obj) {
-    description += (hint + ": " + obj[hint]);
+    description += (hint + ": " + obj[hint] + " ");
   }
 
   return description;
@@ -39,9 +39,6 @@ function initialize() {
 
   // Get current CH choice
   var currentCH = getCH();
-
-  console.log("BUILD")
-  console.dir(currentCH)
 
   // Build the menu
   var menu = document.getElementById('menu');
