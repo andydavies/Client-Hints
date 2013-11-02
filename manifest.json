@@ -3,7 +3,7 @@
 
    "name": "Client-Hints",
    "description": "Add HTTP Client-Hint headers to outgoing requests",
-   "version": "0.3.0",
+   "version": "0.3.1",
 
    "browser_action": {
       "default_icon": "icon_48.png",
