@@ -21,7 +21,7 @@ var defaults = [
     title: 'Nexus 4 (160px image width)',
     ch: {
       dpr: '2.0',
-      dw: '160'
+      rw: '160'
     }
   }
 ];
